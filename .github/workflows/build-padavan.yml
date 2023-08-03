@@ -44,7 +44,6 @@ jobs:
         mkdir -p /opt/images/
         
         curl --create-dirs -L https://github.com/htop-dev/htop/archive/refs/tags/3.0.2.tar.gz -o /opt/rt-n56u/trunk/user/htop/htop-3.0.2.tar.gz
-	# wget -t5 --timeout=20 --no-check-certificate -O htop-3.0.2.tar.gz https://bintray.com/htop/source/download_file?file_path=htop-3.0.2.tar.gz
         mkdir -p /opt/rt-n56u/trunk/tools/go
         curl --create-dirs -L https://golang.google.cn/dl/go1.15.2.linux-amd64.tar.gz -o /opt/rt-n56u/trunk/tools/go/go1.15.2.linux-amd64.tar.gz
 	
