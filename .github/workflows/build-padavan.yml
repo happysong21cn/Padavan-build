@@ -42,6 +42,8 @@ jobs:
         cd /opt/rt-n56u/toolchain-mipsel
         sh dl_toolchain.sh
         mkdir -p /opt/images/
+        mkdir -p /opt/rt-n56u/trunk/tools/go
+        curl --create-dirs -L https://golang.google.cn/dl/go1.15.2.linux-amd64.tar.gz -o /opt/rt-n56u/trunk/tools/go/go1.15.2.linux-amd64.tar.gz
     - name: Build Firmware
       env:
         TNAME: JDC-1
