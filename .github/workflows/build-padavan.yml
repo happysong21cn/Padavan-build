@@ -46,7 +46,6 @@ jobs:
         
         mkdir -p /opt/rt-n56u/trunk/user/htop
         curl --create-dirs -L https://raw.githubusercontent.com/hanwckf/rt-n56u/master/trunk/user/htop/htop-3.0.2.tar.gz -o /opt/rt-n56u/trunk/user/htop/htop-3.0.2.tar.gz
-        #sed -i 's#https://bintray.com/htop/source/download_file?file_path=htop-3.0.2.tar.gz#https://codeload.github.com/htop-dev/htop/tar.gz/refs/tags/3.0.2#g' /opt/rt-n56u/trunk/user/htop/Makefile
         mkdir -p /opt/rt-n56u/trunk/tools/go
         curl --create-dirs -L https://golang.google.cn/dl/go1.15.2.linux-amd64.tar.gz -o /opt/rt-n56u/trunk/tools/go/go1.15.2.linux-amd64.tar.gz
     - name: Build Firmware
@@ -113,9 +112,9 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_KOOLPROXY=y" >> .config #KP广告过滤
         echo "CONFIG_FIRMWARE_INCLUDE_CADDY=y" >> .config #在线文件管理服务
         echo "CONFIG_FIRMWARE_INCLUDE_CADDYBIN=n" >> .config #集成caddu执行文件，此文件有13M,请注意固件大小。如果不集成，会从网上下载下来执行，不影响正常使用
-        echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=n" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=y" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_SRELAY=n" >> .config #可以不集成
-        echo "CONFIG_FIRMWARE_INCLUDE_WYY=n" >> .config #网易云解锁
+        echo "CONFIG_FIRMWARE_INCLUDE_WYY=y" >> .config #网易云解锁
         echo "CONFIG_FIRMWARE_INCLUDE_WYYBIN=n" >> .config #网易云解锁GO版本执行文件（4M多）注意固件超大小,不集成会自动下载
         echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=y" >> .config #zerotier ~1.3M
         fi
